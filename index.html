@@ -131,11 +131,11 @@
   <h2>⏳ 回憶時間軸</h2>
   <div class="timeline-horizontal">
     <div class="timeline-item">
-      <img src="images/HeadShot.jpeg" alt="認識" />
+      <img src="images/HeadShot.jpg" alt="認識" />
       <div>2024.07.24<br>在交友軟體上認識你</div>
     </div>
     <div class="timeline-item">
-      <img src="images/Ming_Birthday.jpeg" alt="生日" />
+     <video src="images/Video_Ming_Birthday.mp4" controls autoplay muted loop width="100"></video>
       <div>2024.10.23<br>你的生日</div>
     </div>
     <div class="timeline-item">
@@ -147,96 +147,96 @@
       <div>2025.02.03<br>趁著姥姥生日把我介紹給家人</div>
     </div>
     <div class="timeline-item">
-      <img src="images/argue.jpg" alt="爭吵" />
+      <img src="images/HandWrite.jpg" alt="爭吵" />
       <div>最近<br>吵過好多架但總吵不散</div>
     </div>
   </div>
 
  <!-- ...existing code... -->
-  <h2>🧠 愛情小測驗</h2>
+  <h2>🧠 愛情小測驗 讓我更了解你(不想做也沒關係喔~</h2>
   <div id="quizContainer"></div>
   <div id="result"></div>
 
   <script>
     const questions = [
       {
-        title: "1️⃣ 當你不開心的時候，你最想我怎麼安慰你？",
+        title: "當你不開心的時候，你最想我怎麼安慰你？",
         options: [
-          { text: "說幾句貼心話讓你安心", img: "img/q1a.jpg", type: "肯定的言語" },
-          { text: "陪你好好聊聊、散步或待在一起", img: "img/q1b.jpg", type: "精心的時光" },
-          { text: "給你一個很長很暖的擁抱", img: "img/q1c.jpg", type: "身體的接觸" }
+          { text: "帶你去吃好吃的轉換心情", img: "images/Receiving_Gifts.png", type: "接受禮物" },
+          { text: "陪你好好聊聊、散步或待在一起", img: "images/Quality_Time.png", type: "精心的時光" },
+          { text: "給你一個很長很暖的擁抱", img: "images/Physical_Touch.png", type: "身體的接觸" }
         ]
       },
       {
-        title: "2️⃣ 如果要準備一個驚喜給我，你會？",
+        title: "如果要準備一個驚喜給我，你會？",
         options: [
-          { text: "寫一封充滿愛意的信給我", img: "img/q2a.jpg", type: "肯定的言語" },
-          { text: "計畫一場兩人約會", img: "img/q2b.jpg", type: "精心的時光" },
-          { text: "偷偷送我一樣我喜歡的小東西", img: "img/q2c.jpg", type: "接受禮物" }
+          { text: "寫一封充滿愛意的信給我", img: "images/Words_of_Affirmation.png", type: "肯定的言語" },
+          { text: "計畫一場兩人約會", img: "images/Quality_Time.png", type: "精心的時光" },
+          { text: "偷偷送我一樣我喜歡的東西", img: "images/Receiving_Gifts.png", type: "接受禮物" }
         ]
       },
       {
-        title: "3️⃣ 你覺得你最容易被感動的是什麼時候？",
-        options: [
-          { text: "當我幫你處理一些我不想做的瑣事", img: "img/q3a.jpg", type: "服務的行動" },
-          { text: "當我說「你很棒」、「我以你為榮」這種話的時候", img: "img/q3b.jpg", type: "肯定的言語" },
-          { text: "當我突然來找你陪你一整天", img: "img/q3c.jpg", type: "精心的時光" }
+        title: "你覺得你最容易被感動的是什麼時候？",
+        [ 
+          { text: "當我幫你處理一些我不想做的瑣事", img: "images/Acts_of_Service.png", type: "服務的行動" },
+          { text: "當我說「你很棒」、「我以你為榮」這種話的時候", img: "images/Words_of_Affirmation.png", type: "肯定的言語" },
+          { text: "當我突然來找你陪你一整天", img: "images/Quality_Time.png", type: "精心的時光" }
         ]
       },
       {
-        title: "4️⃣ 如果我今天心情不好，你會？",
+        title: "如果我今天心情不好，你會？",
         options: [
-          { text: "擁抱我、牽著我不說話也可以", img: "img/q4a.jpg", type: "身體的接觸" },
-          { text: "陪我慢慢聊，聽我抱怨", img: "img/q4b.jpg", type: "精心的時光" },
-          { text: "準備熱飲或點我喜歡的外送送到我面前", img: "img/q4c.jpg", type: "服務的行動" }
+          { text: "擁抱我、牽著我不說話也可以", img: "images/Physical_Touch.png", type: "身體的接觸" },
+          { text: "陪我慢慢聊，聽我抱怨", img: "images/Quality_Time.png", type: "精心的時光" },
+          { text: "準備熱飲或點我喜歡的外送送到我面前", img: "images/Acts_of_Service.png", type: "服務的行動" }
         ]
       },
       {
-        title: "5️⃣ 當你說「我真的很累」時，你希望我會？",
+        title: "當你說「我真的很累」時，你希望我會？",
         options: [
-          { text: "幫你按摩、拍拍你、讓你靠著我", img: "img/q5a.jpg", type: "身體的接觸" },
-          { text: "說：「你做得很好了，我很心疼你」之類的話", img: "img/q5b.jpg", type: "肯定的言語" },
-          { text: "幫你完成你那天不想做的事情", img: "img/q5c.jpg", type: "服務的行動" }
+          { text: "幫你按摩、拍拍你、讓你靠著我", img: "images/Physical_Touch.png", type: "身體的接觸" },
+          { text: "說：「你做得很好了，我很心疼你」之類的話", img: "images/Words_of_Affirmation.png", type: "肯定的言語" },
+          { text: "幫你完成你那天不想做的事情", img: "images/Acts_of_Service.png", type: "服務的行動" }
         ]
       },
       {
-        title: "6️⃣ 如果只能在你生日收到一樣東西，你會選？",
+        title: "如果只能在你生日收到一樣東西，你會選？",
         options: [
-          { text: "一封真誠的手寫卡片", img: "img/q6a.jpg", type: "肯定的言語" },
-          { text: "一整天什麼都不排，就是陪著你", img: "img/q6b.jpg", type: "精心的時光" },
-          { text: "一份我收藏清單裡的驚喜禮物", img: "img/q6c.jpg", type: "接受禮物" }
+          { text: "一封真誠的手寫卡片", img: "images/Words_of_Affirmation.png", type: "肯定的言語" },
+          { text: "一整天什麼都不排，就是陪著你", img: "images/Quality_Time.png", type: "精心的時光" },
+          { text: "一份我收藏清單裡的驚喜禮物", img: "images/Receiving_Gifts.png", type: "接受禮物" }
         ]
       },
       {
-        title: "7️⃣ 你覺得你最自在的表達愛的方式是？",
+        title: "你覺得你最自在的表達愛的方式是？",
         options: [
-          { text: "為我做很多事、提醒我小細節", img: "img/q7a.jpg", type: "服務的行動" },
-          { text: "常常稱讚或鼓勵我", img: "img/q7b.jpg", type: "肯定的言語" },
-          { text: "總是黏在我身邊、很喜歡肢體接觸", img: "img/q7c.jpg", type: "身體的接觸" }
+          { text: "為我做很多事、提醒我小細節", img: "images/Acts_of_Service.png", type: "服務的行動" },
+          { text: "默默準備你認為我需要或我會喜歡的禮物", img: "images/Receiving_Gifts.png", type: "接受禮物" },
+          { text: "總是黏在我身邊、很喜歡肢體接觸", img: "images/Physical_Touch.png", type: "身體的接觸" }
         ]
       },
       {
-        title: "8️⃣ 假如我們在外面吵架了，你會怎麼處理？",
+        title: "假如我們在外面吵架了，你會怎麼處理？",
         options: [
-          { text: "安靜但緊緊地握住我的手", img: "img/q8a.jpg", type: "身體的接觸" },
-          { text: "馬上說幾句安撫我情緒的話", img: "img/q8b.jpg", type: "肯定的言語" },
-          { text: "主動說「我們先去找個地方好好聊聊」然後陪著我", img: "img/q8c.jpg", type: "精心的時光" }
+          { text: "安靜但緊緊地握住我的手", img: "images/Physical_Touch.png", type: "身體的接觸" },
+          { text: "馬上說幾句安撫我情緒的話", img: "images/Words_of_Affirmation.png", type: "肯定的言語" },
+          { text: "主動說「我們先去找個地方好好聊聊」然後陪著我", img: "images/Quality_Time.png", type: "精心的時光" }
         ]
       },
       {
-        title: "9️⃣ 你收到禮物時最在意的是？",
+        title: "你收到禮物時最在意的是？",
         options: [
-          { text: "實用性和我有沒有幫你想到細節", img: "img/q9a.jpg", type: "服務的行動" },
-          { text: "禮物背後我想對你說的話", img: "img/q9b.jpg", type: "肯定的言語" },
-          { text: "那份「花心思挑選」的心意", img: "img/q9c.jpg", type: "接受禮物" }
+          { text: "實用性和我有沒有幫你想到細節", img: "images/Acts_of_Service.png", type: "服務的行動" },
+          { text: "禮物背後我想對你說的話", img: "images/Words_of_Affirmation.png", type: "肯定的言語" },
+          { text: "那份「花心思挑選」的心意", img: "images/Receiving_Gifts.png", type: "接受禮物" }
         ]
       },
       {
-        title: "🔟 最後，如果我們有機會一起走更久更遠，你覺得我最希望我們能？",
+        title: "最後，如果我們有機會一起走更久更遠，你覺得我最希望我們能？",
         options: [
-          { text: "經常做彼此生活的幫手", img: "img/q10a.jpg", type: "服務的行動" },
-          { text: "無論多忙都留時間給彼此", img: "img/q10b.jpg", type: "精心的時光" },
-          { text: "不管到哪裡都可以自然地牽著手走下去", img: "img/q10c.jpg", type: "身體的接觸" }
+          { text: "經常做彼此生活的幫手", img: "images/Acts_of_Service.png", type: "服務的行動" },
+          { text: "重要節日或不時給對方準備禮物", img: "images/Receiving_Gifts.png", type: "接受禮物" },
+          { text: "不管到哪裡都可以自然地牽著手走下去", img: "images/Physical_Touch.png", type: "身體的接觸" }
         ]
       }
     ];
