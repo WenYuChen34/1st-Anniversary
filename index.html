@@ -43,7 +43,8 @@
       margin: 0 10px;
       position: relative;
     }
-    .timeline-item img {
+    .timeline-item img,
+    .timeline-item video {
       width: 100px;
       height: 100px;
       object-fit: cover;
@@ -51,6 +52,8 @@
       box-shadow: 0 2px 8px #ff7f9c44;
       margin-bottom: 0.5em;
       border: 2px solid #ff7f9c;
+      background: #fffafc;
+      display: block;
     }
     .timeline-item::after {
       content: "";
@@ -96,6 +99,7 @@
       margin-bottom: 0.3em;
       border: 2px solid transparent;
       transition: border 0.2s;
+      background: #fffafc;
     }
     .quiz-options input[type="radio"]:checked + img {
       border: 2px solid #e91e63;
@@ -126,16 +130,16 @@
 </head>
 <body>
   <h1>❤️ 我們的一週年 ❤️</h1>
-  <p class="typing">時間好像過得很快，我們也一起經歷了不少事情。有時候我會想，我們是不是能一直走下去？</p>
+  <p class="typing">時間過得很快，我們也一起經歷了不少事情。我常會想，能一直一直走下去就太好了</p>
 
-  <h2>⏳ 回憶時間軸</h2>
+  <h2>⏳ 我們一起走過 ⏳</h2>
   <div class="timeline-horizontal">
     <div class="timeline-item">
       <img src="images/HeadShot.jpg" alt="認識" />
       <div>2024.07.24<br>在交友軟體上認識你</div>
     </div>
     <div class="timeline-item">
-     <video src="images/Video_Ming_Birthday.mp4" controls autoplay muted loop width="100"></video>
+      <video src="images/Video_Ming_Birthday.mp4" controls autoplay muted loop></video>
       <div>2024.10.23<br>你的生日</div>
     </div>
     <div class="timeline-item">
@@ -147,12 +151,11 @@
       <div>2025.02.03<br>趁著姥姥生日把我介紹給家人</div>
     </div>
     <div class="timeline-item">
-      <img src="images/HandWrite.jpg" alt="爭吵" />
+      <img src="images/HandWrite.jpeg" alt="爭吵" />
       <div>最近<br>吵過好多架但總吵不散</div>
     </div>
   </div>
 
- <!-- ...existing code... -->
   <h2>🧠 愛情小測驗 讓我更了解你(不想做也沒關係喔~</h2>
   <div id="quizContainer"></div>
   <div id="result"></div>
@@ -177,7 +180,7 @@
       },
       {
         title: "你覺得你最容易被感動的是什麼時候？",
-        [ 
+        options: [
           { text: "當我幫你處理一些我不想做的瑣事", img: "images/Acts_of_Service.png", type: "服務的行動" },
           { text: "當我說「你很棒」、「我以你為榮」這種話的時候", img: "images/Words_of_Affirmation.png", type: "肯定的言語" },
           { text: "當我突然來找你陪你一整天", img: "images/Quality_Time.png", type: "精心的時光" }
@@ -248,6 +251,7 @@
     function showQuestion(idx) {
       const q = questions[idx];
       let html = `<div class="quiz-question"><div class="quiz-title">${q.title}</div><div class="quiz-options">`;
+      if (!q.options) return; // 防止資料錯誤
       q.options.forEach((opt, i) => {
         html += `
           <label>
@@ -278,13 +282,14 @@
       document.getElementById('quizContainer').innerHTML = '';
       let maxType = Object.keys(stats).reduce((a, b) => stats[a] > stats[b] ? a : b);
       let html = `<div>你最偏好的愛之語是：<b style="color:#e91e63">${maxType}</b></div>`;
-      html += `<div style="margin-top:1em;">其實不管是哪一種，我都想和你一直走下去 ❤️</div>`;
+      html += `<div style="margin-top:1em;">其實不管是哪一種，我都想和你一直在一起 ❤️<br>測完之後可以告訴我答案讓我更了解你喔~</div>`;
       document.getElementById('result').innerHTML = html;
       document.getElementById('result').style.display = 'block';
     }
 
-    showQuestion(0);
+    window.onload = function() {
+      showQuestion(0);
+    };
   </script>
-<!-- ...existing code... -->
 </body>
 </html>
